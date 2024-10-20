@@ -1,6 +1,19 @@
 <div class="logo-container"> 
-  <img src="/TwoDoneLogo.png" alt="Two Done Logo" class="logo">
+  <img src="/TwoDoneLogo.png" alt="Two Done Logo" class="logo" />
 </div>
+
+<!-- Toggle Button -->
+<button (click)="toggleVideo()">Toggle Background Video</button>
+
+<!-- Background Video (conditionally shown) -->
+<div class="background-video-container" *ngIf="isVideoVisible">
+  <video autoplay muted loop class="background-video">
+    <source src="/FishBackground.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<!-- Main Container -->
 <div class="container">
   <!-- Left Column (Timer + Timelapse) -->
   <div class="left-column">
