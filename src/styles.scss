@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+// Shared styles (task-list inspired)
+$primary-color: coral;
+$hover-color: darkred;
+$text-color: black;
+$border-color: #ccc;
+$completed-task-color: rgb(71, 71, 71);
+
+.container-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.button-style {
+  padding: 10px;
+  background-color: $primary-color;
+  color: $text-color;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 5px;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  &:disabled {
+    background-color: $completed-task-color;
+    cursor: not-allowed;
+  }
+}
+
+.editable {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.checkmark, .delete-task {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.done {
+  color: $completed-task-color;
+  text-decoration: line-through;
+}
+
+input, button {
+  margin-top: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}

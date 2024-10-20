@@ -1,3 +1,28 @@
+/* Global Button Style */
+button {
+  background-color: coral;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 20%; /* Ensure buttons span the full width of their container */
+
+  &:hover {
+    background-color: darkred;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+  }
+}
+
 /* Background Video */
 .background-video-container {
   position: fixed;
@@ -5,7 +30,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1; /* Make sure it's behind other content */
+  z-index: -1; /* Behind other content */
   overflow: hidden;
 }
 
@@ -16,14 +41,14 @@
   width: 100vw;
   height: 100vh;
   object-fit: cover; /* Ensure it covers the entire background */
-  z-index: 1000; /* Temporarily set high z-index to test */
+  z-index: -1; /* Behind all other content */
   pointer-events: none; /* Disable interaction with the video */
 }
 
+/* Logo */
 .logo-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
 }
 
 .logo {
@@ -31,6 +56,7 @@
   height: auto;
 }
 
+/* Main Container */
 .container {
   display: flex;
   justify-content: space-between;
@@ -43,22 +69,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .right-column {
-  width: 50vw;
+  width: 50vw; /* Right column takes the other 50% */
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Responsive design for small screens */
+/* Ensure content spans the full width of columns */
+.left-column > * {
+  width: 100%; /* Make elements take up full width of the column */
+  max-width: 640px; /* Optional: Limit the max width */
+}
+
+.right-column > * {
+  width: 100%;
+  max-width: 640px; /* Optional: Limit the max width */
+}
+
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column;
+    flex-direction: column; /* Stack elements vertically on small screens */
   }
 
   .left-column, .right-column {
-    width: 100vw;
+    width: 100vw; /* Columns take full width on small screens */
   }
 }

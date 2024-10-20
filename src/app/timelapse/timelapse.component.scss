@@ -1,39 +1,33 @@
 .timelapse-container {
-    display: flex;
-    flex-direction: column;
-    // align-items: center;
-    max-width: 50vw;  // Reduce the height of the video for smaller screens
-  
-    video {
-      width: 640px;
-      height: 480px;
-      border: 2px solid #ccc;
-      margin-bottom: 10px;
-    }
-  
-    .controls {
-      display: flex;
-      justify-content: center;
-  
-      button {
-        margin: 5px;
-        padding: 10px;
-        background-color: coral;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-  
-        &:disabled {
-          background-color: grey;
-          cursor: not-allowed;
-        }
-  
-        &:hover:not(:disabled) {
-          background-color: darkred;
-        }
-      }
-    }
+  padding: 20px;
+  background-color: rgba(255, 127, 80, 0.7);  /* Coral red translucent */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  video {
+    width: 640px;
+    height: 480px;
+    margin-bottom: 10px;
   }
+
+  .timelapse-controls {
+    display: flex;
+    justify-content: center;
+  }
+
+    .timelapse-controls button {
+      padding: 10px 20px;
+      background-color: coral;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .timelapse-controls button:hover {
+      background-color: darkred;
+    }
   

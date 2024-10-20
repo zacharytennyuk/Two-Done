@@ -10,7 +10,7 @@ import { TaskListComponent } from './task-list/task-list.component';  // Import 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   // Add the standalone components to imports
-  imports: [CommonModule, TimerComponent, TimelapseComponent, TaskListComponent],
+  imports: [TimerComponent, TimelapseComponent, TaskListComponent, CommonModule],
 })
 export class AppComponent {
   isVideoVisible: boolean = true; // Initially show the video
