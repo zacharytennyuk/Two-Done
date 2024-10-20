@@ -1,0 +1,53 @@
+<div class="task-container">
+  <!-- Tab Buttons -->
+  <div class="tabs">
+    <button (click)="switchTab('todo')" [class.active]="activeTab === 'todo'">To Do</button>
+    <button (click)="switchTab('done')" [class.active]="activeTab === 'done'">To Done</button>
+  </div>
+
+  <!-- To Do List -->
+  <div *ngIf="activeTab === 'todo'">
+    <h3>To Do</h3>
+
+    <!-- Input and Add Task Button -->
+    <div class="add-task">
+      <input [(ngModel)]="newTaskName" placeholder="New Task" />
+      <button (click)="addTask()">Add Task</button>
+    </div>
+
+    <ul>
+      <li *ngFor="let task of tasks">
+        <!-- Click to edit task name -->
+        <span 
+          class="editable" 
+          *ngIf="!task.isEditing" 
+          (click)="startEditing(task)">
+          {{ task.name }}
+        </span>
+
+        <input 
+          *ngIf="task.isEditing" 
+          [value]="task.name" 
+          (blur)="saveTask(task, $event)" 
+          (keydown.enter)="saveTask(task, $event)"
+        />
+
+        <!-- Checkmark for marking as done -->
+        <span class="checkmark" (click)="completeTask(task)">✔</span>
+
+        <!-- "X" symbol for deletion -->
+        <span class="delete-task" (click)="deleteTask(task.id)">✖</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- To Done List -->
+  <div *ngIf="activeTab === 'done'">
+    <h3>To Done</h3>
+    <ul>
+      <li *ngFor="let task of doneTasks" class="done">
+        {{ task.name }}
+      </li>
+    </ul>
+  </div>
+</div>

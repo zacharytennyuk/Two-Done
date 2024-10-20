@@ -1,0 +1,63 @@
+.logo-container { 
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.logo {
+  width: 150px;  /* Adjust size as necessary */
+  height: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+
+  /* Left column for timer and timelapse */
+  .left-column {
+    width: 50vw;  /* Make this take 50% of the viewport width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;  /* Align content at the top */
+  }
+
+  .timelapse {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    video {
+      width: 90%;  /* Shrink video size to avoid overflow */
+      max-height: 30vh;
+      object-fit: contain;
+    }
+  }
+
+  /* Right column for ToDo list */
+  .right-column {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+  }
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;  /* Stack the elements vertically on small screens */
+  }
+
+  .left-column, .right-column {
+    width: 100vw;  /* Make both columns take full width on small screens */
+  }
+
+  .timelapse video {
+    max-height: 20vh;  /* Further reduce video height on small screens */
+  }
+}

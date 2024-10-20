@@ -1,0 +1,8 @@
+<div class="timelapse-container">
+  <video #videoElement autoplay></video>
+  
+  <!-- Download button (disabled while recording) -->
+  <div class="controls">
+    <button #downloadButton (click)="downloadTimelapse()" [disabled]="isRecording">Download Timelapse</button>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="timer">
+  <h2>{{ getDisplayTime() }}</h2>
+
+  <!-- Toggle button for Start and Pause -->
+  <button (click)="toggleStartPause()">
+    {{ isRunning ? 'Pause' : 'Start' }}
+  </button>
+  
+  <button (click)="resetTimer()">Reset</button>
+</div>

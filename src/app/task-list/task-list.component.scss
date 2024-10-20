@@ -1,0 +1,121 @@
+.task-container {
+  padding: 20px;
+  background-color: rgba(255, 127, 80, 0.7);  /* Coral red translucent */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    button {
+      padding: 10px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: white;
+      border: 1px solid coral;
+      border-radius: 5px;
+      color: coral;
+      font-weight: bold;
+
+      &.active {
+        background-color: coral;
+        color: white;
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+
+      .editable {
+        text-decoration: underline;
+        cursor: pointer;
+        flex-grow: 1;
+      }
+
+      input {
+        flex-grow: 1;
+        border: none;
+        background-color: transparent;  /* Makes it blend into the background */
+        font-size: 16px;
+        outline: none;  /* Removes focus outline */
+        color: black;  /* Text color */
+        padding: 0;
+        margin: 0;
+        text-decoration: underline;  /* Underline to indicate it’s editable */
+      }
+
+      .checkmark {
+        cursor: pointer;
+        padding: 5px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 16px;
+        font-size: 16px;
+      }
+
+      .checkmark:hover {
+        background-color: lightgreen;
+        border-color: green;
+        color: green;
+      }
+
+      .delete-task {
+        cursor: pointer;
+        color: red;
+        font-size: 18px;
+      }
+
+      .delete-task:hover {
+        color: darkred;
+      }
+    }
+
+    li.done {
+      color: #aaa;
+      text-decoration: line-through;
+    }
+  }
+
+  .add-task {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    input {
+      border: none;
+      background-color: transparent;  /* Makes the input field blend into the background */
+      font-size: 16px;
+      outline: none;  /* Removes focus outline */
+      color: black;  /* Text color */
+      padding: 0;
+      margin: 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: coral;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: darkred;
+    }
+  }
+}
