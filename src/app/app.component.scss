@@ -5,6 +5,7 @@ button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
+  margin-left: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 20%; /* Ensure buttons span the full width of their container */
@@ -32,6 +33,7 @@ button {
   height: 100vh;
   z-index: -1; /* Behind other content */
   overflow: hidden;
+  background-color: black;
 }
 
 .background-video {
@@ -43,6 +45,7 @@ button {
   object-fit: cover; /* Ensure it covers the entire background */
   z-index: -1; /* Behind all other content */
   pointer-events: none; /* Disable interaction with the video */
+  background-color: black;
 }
 
 /* Logo */

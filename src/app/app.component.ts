@@ -33,4 +33,8 @@ export class AppComponent {
     console.log('Timer reset.');
     // Handle recording reset in TimelapseComponent
   }
+
+  openLoFiPlaylist() {
+    window.open('https://www.youtube.com/watch?v=jfKfPfyJRdk', '_blank');
+  }
 }

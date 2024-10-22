@@ -3,7 +3,8 @@
   <br/>
 </div>
 <!-- Toggle Button -->
-<button (click)="toggleVideo()">Toggle Background</button>
+
+<button (click)="toggleVideo()">Toggle Ambience</button>
 
 <!-- Background Video (conditionally shown) -->
 <div class="background-video-container" *ngIf="isVideoVisible">
@@ -20,13 +21,14 @@
     <div class="timer">
       <app-timer></app-timer>
     </div>
-    <div class="timelapse">
-      <app-timelapse></app-timelapse>
-    </div>
+    <app-task-list></app-task-list>
   </div>
 
   <!-- Right Column (ToDo List) -->
   <div class="right-column">
-    <app-task-list></app-task-list>
+    
+    <div class="timelapse">
+      <app-timelapse></app-timelapse>
+    </div>
   </div>
 </div>
